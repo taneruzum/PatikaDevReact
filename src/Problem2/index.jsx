@@ -20,17 +20,19 @@ function ToDoApp() {
 
     const handleKeyDown = (event) => {
         if (event.key === 'Enter') {
-            //Bir eleman ekledik diyelim daha sonra input kısmının temizlenmesi için todo yu setToDo ile güncellememiz gerekir.
-            setToDo("");
-
-            const newTodoList = [...todoList, { text: todo, done: false }];
-            setToDoList(newTodoList);
-            localStorage.setItem('todoList', JSON.stringify(newTodoList));
-
-            //Sayfanın tekrardan yüklenmesini engellemek için
+            if (todo.trim() === "") {
+                alert("Hata: Giriş değeri boş olamaz!");
+            } else {
+                setToDo("");
+                const newTodoList = [...todoList, { text: todo, done: false }];
+                setToDoList(newTodoList);
+                localStorage.setItem('todoList', JSON.stringify(newTodoList));
+            }
             event.preventDefault();
         }
     };
+
+
     const toggleDone = (index) => {
         //Bir done state tanımlarsak genel bir done olur ve listedeki bir elemanı tiklersek
         // tüm elemanlar tiklenmiş görünür. Bu yüzden her eleman için ayrı bir done belirlemek gerekli
@@ -48,9 +50,9 @@ function ToDoApp() {
         localStorage.setItem('todoList', JSON.stringify(newTodoList));
     };
 
-
+    // console.log("problem 2 çalıştı...");
     return (
-        <div className='w-[500px] h-auto flex flex-col'>
+        <div className='w-[550px] min-h-[590px] h-auto flex flex-col'>
             <h1 className=' w-full h-12 text-center text-4xl text-[#f59e0b] font-bold'>My To-Do List</h1>
             <form className='w-full h-full flex border  bg-slate-200'>
                 <button className='w-20 h-auto flex justify-center'><IoIosArrowDown size={40} /></button>
@@ -62,16 +64,19 @@ function ToDoApp() {
                     placeholder='Tamamlamam gereken ne var ?'
                     className='w-full px-5 text-xl outline-none' />
             </form>
-            {todoList && todoList?.map((todo, index) => (
-                <div key={index} className='w-full h-full flex items-center border  bg-slate-200'>
-                    <button onClick={() => toggleDone(index)} className='w-20 h-10 flex justify-center items-center'>{todo.done ? <FaRegCheckCircle size={30} /> : <FaRegCircle size={30} />}</button>
-                    <span className={classNames('w-full flex items-center  pl-4 text-xl transition-all duration-500',
-                        {
-                            "line-through opacity-50": todo.done === true,
-                        })}>{todo.text}</span>
-                    <div onClick={() => removeTodo(index)}><HiMiniXMark size={40} /></div>
-                </div>
-            ))}
+            <div className='w-full max-h-[500px] overflow-x-hidden'>
+                {todoList && todoList?.map((todo, index) => (
+                    <div key={index} className='w-full h-full flex items-center border  bg-slate-200'>
+                        <button onClick={() => toggleDone(index)} className='w-20 h-10 flex justify-center items-center'>{todo.done ? <FaRegCheckCircle size={30} /> : <FaRegCircle size={30} />}</button>
+                        <span className={classNames('w-full flex items-center  pl-4 text-xl transition-all duration-500',
+                            {
+                                "line-through opacity-50": todo.done === true,
+                            })}>{todo.text}</span>
+                        <div onClick={() => removeTodo(index)}><HiMiniXMark size={40} /></div>
+                    </div>
+                ))}
+            </div>
+
         </div>
     )
 }
