@@ -16,7 +16,7 @@ export default async function getData(userId) {
 
         return result;
     } catch (error) {
-        console.error('Veri çekme hatası!:', error.message);
+        console.error('İstek başarısız!:', error.message);
         throw error;
     }
 }

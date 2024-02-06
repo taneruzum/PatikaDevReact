@@ -6,8 +6,10 @@ function Problem1() {
     useEffect(() => {
         async function fetchData() {
             try {
+                //Sadece userId'si 1 olan kullanıcı için
                 const userId = 1;
                 const result = await getData(userId);
+
                 console.log(result);
 
             } catch (error) {
