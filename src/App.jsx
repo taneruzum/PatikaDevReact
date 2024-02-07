@@ -4,7 +4,7 @@ import ToDoApp from './Problem2';
 //Ödevlerin çözümlerini çalıştırabilirsin
 function App() {
 
-  // console.log("App çalıştı...");
+  console.log("App çalıştı...");
   return (
     <div className="w-full h-[100vh] flex justify-center items-center bg-[#252525]">
       {/* <Problem1 /> */}
