@@ -1,6 +1,8 @@
 import Problem1 from './Problem1';
 import ToDoApp from './Problem2';
 import WeatherApp from './Problem3';
+import { WeatherProvider } from './Problem3/WeatherContext';
+
 
 //Ödevlerin çözümlerini çalıştırabilirsin
 function App() {
@@ -10,9 +12,11 @@ function App() {
     <div className="w-full h-[100vh] flex justify-center items-center bg-[#252525]">
       {/* <Problem1 /> */}
       {/* <ToDoApp /> */}
-      <WeatherApp />
-    </div>
 
+      <WeatherProvider>
+        <WeatherApp />
+      </WeatherProvider>
+    </div>
   )
 }
 
