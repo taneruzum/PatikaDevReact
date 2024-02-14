@@ -77,7 +77,7 @@ function ToDoApp() {
     return (
         <div className='w-[550px] min-h-[590px] h-auto flex flex-col '>
             <h1 className=' w-full h-12 text-center text-4xl text-[#f59e0b] font-bold'>My To-Do List</h1>
-            <form className='w-full h-full flex border-b-2 border-black bg-orange-300 '>
+            <form className='w-full flex border-b-2 border-black bg-orange-300 '>
                 <button onClick={toggleAllDone} tabIndex={-1} className='w-20 h-auto flex justify-center border-r-2  border-black transition-all hover:bg-orange-500 hover:text-white'><IoIosArrowDown size={40} /></button>
                 <input
                     value={todo}
@@ -86,7 +86,7 @@ function ToDoApp() {
                     type="text"
                     placeholder='Tamamlamam gereken ne var ?'
                     tabIndex={1}
-                    className='w-full px-5 text-xl font-semibold outline-none' />
+                    className='w-full  px-5 text-xl font-semibold outline-none' />
             </form>
             <div className='w-full max-h-[500px] overflow-x-hidden shadow-2xl shadow-[#000000da] '>
                 <ToDoList todoList={todoList} toggleDone={toggleDone} removeTodo={removeTodo} />

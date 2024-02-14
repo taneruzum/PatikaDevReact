@@ -9,7 +9,7 @@ function App() {
 
   console.log("App çalıştı...");
   return (
-    <div className="w-full h-[100vh] flex justify-center items-center bg-[#252525]">
+    <div className="w-full h-[100vh] flex flex-col justify-center items-center bg-[#252525]">
       {/* <Problem1 /> */}
       {/* <ToDoApp /> */}
 
