@@ -2,6 +2,7 @@ import Problem1 from './Problem1';
 import ToDoApp from './Problem2';
 import WeatherApp from './Problem3';
 import { WeatherProvider } from './Problem3/WeatherContext';
+import Problem4 from './Problem4';
 
 
 //Ödevlerin çözümlerini çalıştırabilirsin
@@ -13,9 +14,12 @@ function App() {
       {/* <Problem1 /> */}
       {/* <ToDoApp /> */}
 
-      <WeatherProvider>
+      {/* <WeatherProvider>
         <WeatherApp />
-      </WeatherProvider>
+      </WeatherProvider> */}
+
+      <Problem4/>
+      
     </div>
   )
 }
