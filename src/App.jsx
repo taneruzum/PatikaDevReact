@@ -11,15 +11,15 @@ function App() {
   console.log("App çalıştı...");
   return (
     <div className="w-full h-[100vh] flex flex-col justify-center items-center bg-[#252525]">
-      {/* <Problem1 /> */}
-      {/* <ToDoApp /> */}
+      <Problem1 />
+      <ToDoApp />
 
-      {/* <WeatherProvider>
+      <WeatherProvider>
         <WeatherApp />
-      </WeatherProvider> */}
+      </WeatherProvider>
 
       <Problem4/>
-      
+
     </div>
   )
 }

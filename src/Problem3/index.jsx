@@ -6,10 +6,10 @@ import WeatherContext from './WeatherContext';
 async function fetchData(city) {
 
     //Go visual crossing site and sing up,
-    //Find your API key, then paste it below where it says API_KEY
+    //Find your API key, then paste it below where it says REACT_APP_WEATHER_API_KEY
 
     try {
-        const weatherResponse = await axios.get(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${city}/next7days?unitGroup=metric&include=days%2Ccurrent&key=API_KEY&contentType=json`)
+        const weatherResponse = await axios.get(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${city}/next7days?unitGroup=metric&include=days%2Ccurrent&key=${process.env.REACT_APP_WEATHER_API_KEY}&contentType=json`)
 
         const data = await weatherResponse.data;
         console.log(data);
